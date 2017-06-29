@@ -1,0 +1,27 @@
+<%= form_with(model: camera, local: true) do |form| %>
+  <% if camera.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(camera.errors.count, "error") %> prohibited this camera from being saved:</h2>
+
+      <ul>
+      <% camera.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :camera_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :camera_longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
