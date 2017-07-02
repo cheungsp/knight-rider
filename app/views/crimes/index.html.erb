@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crimes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Day</th>
+      <th>Hour</th>
+      <th>Minute</th>
+      <th>Hundred block</th>
+      <th>Neighbourhood</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crimes.each do |crime| %>
+      <tr>
+        <td><%= crime.type_crime %></td>
+        <td><%= crime.year %></td>
+        <td><%= crime.month %></td>
+        <td><%= crime.day %></td>
+        <td><%= crime.hour %></td>
+        <td><%= crime.minute %></td>
+        <td><%= crime.hundred_block %></td>
+        <td><%= crime.neighbourhood %></td>
+        <td><%= crime.latitude %></td>
+        <td><%= crime.longitude %></td>
+        <td><%= link_to 'Show', crime %></td>
+        <td><%= link_to 'Edit', edit_crime_path(crime) %></td>
+        <td><%= link_to 'Destroy', crime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crime', new_crime_path %>

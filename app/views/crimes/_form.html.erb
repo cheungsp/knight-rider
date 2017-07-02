@@ -1,0 +1,67 @@
+<%= form_with(model: crime, local: true) do |form| %>
+  <% if crime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(crime.errors.count, "error") %> prohibited this crime from being saved:</h2>
+
+      <ul>
+      <% crime.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :type_crime %>
+    <%= form.text_field :type_crime, id: :crime_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :crime_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.number_field :month, id: :crime_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.number_field :day, id: :crime_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hour %>
+    <%= form.number_field :hour, id: :crime_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minute %>
+    <%= form.number_field :minute, id: :crime_minute %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hundred_block %>
+    <%= form.text_field :hundred_block, id: :crime_hundred_block %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighbourhood %>
+    <%= form.text_field :neighbourhood, id: :crime_neighbourhood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :crime_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :crime_longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
