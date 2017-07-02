@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Accidents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Crash type</th>
+      <th>Crash count</th>
+      <th>Location</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accidents.each do |accident| %>
+      <tr>
+        <td><%= accident.crash_type %></td>
+        <td><%= accident.crash_count %></td>
+        <td><%= accident.location %></td>
+        <td><%= accident.latitude %></td>
+        <td><%= accident.longitude %></td>
+        <td><%= link_to 'Show', accident %></td>
+        <td><%= link_to 'Edit', edit_accident_path(accident) %></td>
+        <td><%= link_to 'Destroy', accident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accident', new_accident_path %>

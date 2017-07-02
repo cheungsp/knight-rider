@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :accidents
   resources :crimes
   resources :cameras
   resources :tickets

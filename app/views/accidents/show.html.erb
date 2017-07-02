@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Crash type:</strong>
+  <%= @accident.crash_type %>
+</p>
+
+<p>
+  <strong>Crash count:</strong>
+  <%= @accident.crash_count %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @accident.location %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @accident.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @accident.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_accident_path(@accident) %> |
+<%= link_to 'Back', accidents_path %>

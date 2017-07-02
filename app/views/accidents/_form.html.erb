@@ -1,0 +1,42 @@
+<%= form_with(model: accident, local: true) do |form| %>
+  <% if accident.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(accident.errors.count, "error") %> prohibited this accident from being saved:</h2>
+
+      <ul>
+      <% accident.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :crash_type %>
+    <%= form.text_field :crash_type, id: :accident_crash_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :crash_count %>
+    <%= form.number_field :crash_count, id: :accident_crash_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :accident_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :accident_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :accident_longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
