@@ -5,6 +5,10 @@ class CamerasController < ApplicationController
   # GET /cameras.json
   def index
     @cameras = Camera.all
+    respond_to do |format|
+      format.html { render }
+      format.json { render json: @cameras }
+    end
   end
 
   # GET /cameras/1
