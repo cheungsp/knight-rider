@@ -1,4 +1,6 @@
 class Api::V1::CamerasController < ApplicationController
+  before_action :authenticate_user!
+  before_action :find_camera, only: [:show, :destroy]
   def show
     render json: @camera
   end
@@ -10,7 +12,7 @@ end
 
 def create
   camera = Camera.new(camera_params)
-  # camera.user = current_user
+  camera.user = current_user
 
   if camera.save
     render json: { id: camera.id }
