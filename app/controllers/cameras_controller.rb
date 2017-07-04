@@ -1,6 +1,7 @@
 class CamerasController < ApplicationController
   before_action :set_camera, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  
   # GET /cameras
   # GET /cameras.json
   def index

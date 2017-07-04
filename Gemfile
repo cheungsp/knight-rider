@@ -12,6 +12,8 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'underscore-rails'
 gem 'active_model_serializers'
+gem 'simple_form'
+gem 'rack-cors'
 # gem 'geocoder'
 # gem 'chronic'
 
