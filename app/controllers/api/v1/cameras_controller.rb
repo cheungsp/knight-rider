@@ -1,5 +1,5 @@
 class Api::V1::CamerasController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :find_camera, only: [:show, :destroy]
   def show
     render json: @camera

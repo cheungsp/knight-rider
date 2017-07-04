@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     end
 
   namespace :api, defaults: {format: :json} do
-  namespace :v1 do
-    resources :cameras
+    namespace :v1 do
+      resources :cameras
+    end
   end
-end
 
 end
