@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create] do
       delete :destroy, on: :collection
-    end
+  end
 
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
       resources :cameras
+      resources :accidents
+      resources :crimes
     end
   end
 

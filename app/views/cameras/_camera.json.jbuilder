@@ -4,7 +4,7 @@
 json.array! @cameras do |camera|
   json.id camera.id
 
-  json.latitude camera.latitude
-  json.longitude camera.longitude
+  json.latitude camera.lat
+  json.longitude camera.lng
   json.created_at camera.created_at.strftime('%Y-%B-%d')
 end

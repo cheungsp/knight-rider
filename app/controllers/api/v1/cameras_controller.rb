@@ -7,6 +7,7 @@ class Api::V1::CamerasController < ApplicationController
 
   def index
   @cameras = Camera.all
+  # @cameras = Camera.order("created_at DESC").limit(10)
   render json: @cameras
 end
 
