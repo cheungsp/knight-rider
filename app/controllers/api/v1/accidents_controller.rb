@@ -7,7 +7,7 @@ class Api::V1::AccidentsController < ApplicationController
 
   def index
     # @accidents = Accident.all
-    @accidents = Accident.order("created_at DESC").limit(500)
+    @accidents = Accident.order("created_at ASC").limit(150)
     render json: @accidents
   end
 

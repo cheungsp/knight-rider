@@ -39,3 +39,14 @@ incidents.each do |u|
 
   Accident.create(crash_count: u["Crash Count"], location: u["Location"], crash_type: u["Crash Type"], latitude: u["Latitude"], longitude: u["Longitude"])
 end
+
+
+
+# q.neighbourhood.gsub(/-/,'')
+
+# b = Crime.all.where(neighbourhood: 'Grandview-Woodland')
+# b.each do |x|
+# x.update_attribute :neighbourhood, 'grandviewwoodland'
+# end
+
+#

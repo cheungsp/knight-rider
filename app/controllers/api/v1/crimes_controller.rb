@@ -6,10 +6,12 @@ class Api::V1::CrimesController < ApplicationController
   end
 
   def index
-  # @crimes = Crime.all
-  @crimes = Crime.order("created_at DESC").limit(500)
+  @crimes = Crime.all
+  # @crimes = Crime.limit(300)
   render json: @crimes
 end
+ 
+
 
 def create
   crime = Crime.new(crime_params)
