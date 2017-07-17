@@ -17,5 +17,3 @@ class Api::ApplicationController < ApplicationController
       head :unauthorized unless current_user.present?
     end
   end
-
-end
