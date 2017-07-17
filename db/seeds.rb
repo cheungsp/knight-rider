@@ -1,5 +1,5 @@
 
-json_seed = Rails.root.join('public/camMarkers.json')
+json_seed = Rails.root.join('../public/camMarkers.json')
 
 cam_markers = JSON.parse(json_seed.read)
 
@@ -10,7 +10,7 @@ end
 
 
 require 'csv'
-csv_seed = Rails.root.join('public/crime_stats.csv')
+csv_seed = Rails.root.join('../public/crime_stats.csv')
 crime_stats = CSV.parse(csv_seed.read, headers: true)
 incidents = crime_stats.map { |incident| incident.to_hash }
 
@@ -28,7 +28,7 @@ incidents.each do |u|
 end
 
 require 'csv'
-csv_seed = Rails.root.join('public/accidents.csv')
+csv_seed = Rails.root.join('../public/accidents.csv')
 accidents = CSV.parse(csv_seed.read, headers: true)
 incidents = accidents.map { |incident| incident.to_hash }
 
